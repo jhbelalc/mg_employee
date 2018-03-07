@@ -1,0 +1,74 @@
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>  
+@model IEnumerable<mg_employee.Models.Employee>
+
+<p>
+    @Html.ActionLink("Return", "/")
+</p>
+<table class="table" id="tblEmployees">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contractTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.roleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.roleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hourlySalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.monthlySalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anualSalary)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contractTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.roleId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.roleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hourlySalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.monthlySalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anualSalary)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "/IndexAsync/", new { id=item.id }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.id })*@
+        </td>
+    </tr>
+}
+
+</table>
+
+<script>
+    $(document).ready(function () {
+        //$("#tblEmployees").DataTable();
+    })
+</script>

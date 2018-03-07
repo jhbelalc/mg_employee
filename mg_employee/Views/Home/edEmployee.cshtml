@@ -1,0 +1,67 @@
+﻿@model mg_employee.Models.Employee
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contractTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contractTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.roleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roleId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.roleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hourlySalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hourlySalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.monthlySalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.monthlySalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.anualSalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anualSalary)
+        </dd>
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Display", "/IndexAsync/", new { id = Model.id }) |*@
+    @Html.ActionLink("Back to List", "/IndexAsync/0")
+</p>

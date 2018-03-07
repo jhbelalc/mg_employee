@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Test-jhbelalc";
+}
+
+<div class="jumbotron">
+    <h1>Employees Test API</h1>
+</div>
+
+<div class="row">
+
+    <input type="number" placeholder="Search ID" id="txtSearch" onkeypress="return isNumber(event)">
+    <br />
+    @*<input type="button" class="btn btn-info" value="Search" onclick="location.href='@Url.Action("IndexAsync", "Home", new { ID=2 } )'" />*@
+    <input type="button" class="btn-success" value="Search" onclick="search()" />
+ </div>
+
+@*<div class="row">
+    <div class="col-md-9">
+        <table style="width:100%;">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contract Type</th>
+                <th>Role ID</th>
+                <th>Role Name</th>
+                <th>Role Description</th>
+                <th>Hour Salary</th>
+                <th>Month Salary</th>
+            </tr>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.id</td>
+                    <td>@employee.name</td>
+                    <td>@employee.contractTypeName</td>
+                    <td>@employee.roleId</td>
+                    <td>@employee.roleName</td>
+                    <td>@employee.roleDescription</td>
+                    <td>@employee.hourlySalary</td>
+                    <td>@employee.monthlySalary</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>*@
+
+<script type="text/javascript">
+
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if ( (charCode > 31 && charCode < 48) || charCode > 57) {
+            return false;
+        }
+        return true;
+    }
+
+    function search() {
+        var host = window.location.host;
+        var empID = $("#txtSearch").val();
+        var path = "/Home/IndexAsync/" + empID;
+        window.location.pathname = path;
+        var url = host + path;
+        window.location(url);
+    }
+</script>
