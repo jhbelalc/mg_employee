@@ -11,7 +11,7 @@
     <input type="number" placeholder="Search ID" id="txtSearch" onkeypress="return isNumber(event)">
     <br />
     @*<input type="button" class="btn btn-info" value="Search" onclick="location.href='@Url.Action("IndexAsync", "Home", new { ID=2 } )'" />*@
-    <input type="button" class="btn-success" value="Search" onclick="search()" />
+    <input type="button" class="btn-success" id="btnSearch" value="Get All" onclick="search()" />
  </div>
 
 @*<div class="row">
@@ -47,11 +47,13 @@
 <script type="text/javascript">
 
     function isNumber(evt) {
+        $("#btnSearch").val("Get All");
         evt = (evt) ? evt : window.event;
         var charCode = (evt.which) ? evt.which : evt.keyCode;
-        if ( (charCode > 31 && charCode < 48) || charCode > 57) {
+        if ((charCode > 31 && charCode < 48) || charCode > 57) {
             return false;
         }
+        $("#btnSearch").val("Get Employee");
         return true;
     }
 
